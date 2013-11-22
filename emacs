@@ -1,3 +1,6 @@
+(setq load-path (cons "~/emacs-package" load-path))
+(autoload 'cuda-mode "cuda-mode" "Major mode for editing cuda code." t)
+(add-to-list 'auto-mode-alist '("\\.cu$" . cuda-mode))
 (require 'tramp)
 (setq tramp-default-method "ssh")
 (setq inhibit-startup-message t)
