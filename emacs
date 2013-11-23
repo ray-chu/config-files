@@ -1,4 +1,12 @@
-(setq load-path (cons "~/emacs-package" load-path))
+;; (add-to-list 'load-path "~/emacs-package") 
+(let ((default-directory "~/emacs-package"))
+  (setq load-path
+        (append
+         (let ((load-path (copy-sequence load-path))) ;; Shadow
+           (append 
+            (copy-sequence (normal-top-level-add-to-load-path '(".")))
+            (normal-top-level-add-subdirs-to-load-path)))
+         load-path)))
 (autoload 'cuda-mode "cuda-mode" "Major mode for editing cuda code." t)
 (add-to-list 'auto-mode-alist '("\\.cu$" . cuda-mode))
 (require 'tramp)
