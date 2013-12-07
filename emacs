@@ -7,8 +7,8 @@
             (copy-sequence (normal-top-level-add-to-load-path '(".")))
             (normal-top-level-add-subdirs-to-load-path)))
          load-path)))
-(autoload 'cuda-mode "cuda-mode" "Major mode for editing cuda code." t)
-(add-to-list 'auto-mode-alist '("\\.cu$" . cuda-mode))
+;; (autoload 'cuda-mode "cuda-mode" "Major mode for editing cuda code." t)
+;; (add-to-list 'auto-mode-alist '("\\.cu$" . cuda-mode))
 (require 'tramp)
 (setq tramp-default-method "ssh")
 (setq inhibit-startup-message t)
@@ -17,3 +17,8 @@
 (if (eq system-type 'gnu-linux)(setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
 ;;(if (eq system-type 'darwin))
 (global-linum-mode 1)
+;;set up shell mode as bash
+(setq shell-file-name "/bin/bash")
+;;set up colors of shell mode same as true one
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t) 
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on t)
