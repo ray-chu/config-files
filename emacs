@@ -9,6 +9,7 @@
          load-path)))
 ;; (autoload 'cuda-mode "cuda-mode" "Major mode for editing cuda code." t)
 ;; (add-to-list 'auto-mode-alist '("\\.cu$" . cuda-mode))
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 (require 'tramp)
 (setq tramp-default-method "ssh")
 (setq inhibit-startup-message t)
@@ -22,3 +23,8 @@
 ;;set up colors of shell mode same as true one
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t) 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on t)
+;;let cursor in the end.
+(remove-hook 'comint-output-filter-functions 'comint-postoutput-scroll-to-bottom)
+
+(require 'xcscope)
+(setq cscope-do-not-update-database t)
