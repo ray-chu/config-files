@@ -1,4 +1,7 @@
 ;; (add-to-list 'load-path "~/emacs-package") 
+;;(when(eq system-type 'darwin)
+;;    (add-to-list 'load-path "/Applications/Emacs.app/Contents/Resources/lisp"))
+    ;;(add-to-list 'load-path "/Applications/Emacs.app/Contents/Resources/lisp"))
 (let ((default-directory "~/emacs-package"))
   (setq load-path
         (append
