@@ -26,5 +26,10 @@
 ;;let cursor in the end.
 (remove-hook 'comint-output-filter-functions 'comint-postoutput-scroll-to-bottom)
 
+<<<<<<< HEAD
 (require 'xcscope)
 (setq cscope-do-not-update-database t)
+=======
+(if (eq system-type 'gnu-linux)(require 'xcscope))
+(if (eq system-type 'gnu-linux)(setq cscope-do-not-update-database t))
+>>>>>>> 6e9611de50bbce60c71aa2a3fb51422a15ce7610
