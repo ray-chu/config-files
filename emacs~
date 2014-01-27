@@ -23,5 +23,8 @@
 ;;set up colors of shell mode same as true one
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t) 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on t)
-(require 'xcscope)
-(setq cscope-do-not-update-database t)
+;;let cursor in the end.
+(remove-hook 'comint-output-filter-functions 'comint-postoutput-scroll-to-bottom)
+
+(if (eq system-type 'gnu-linux)(require 'xcscope))
+(if (eq system-type 'gnu-linux)(setq cscope-do-not-update-database t))

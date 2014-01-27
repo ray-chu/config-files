@@ -26,5 +26,9 @@
 ;;let cursor in the end.
 (remove-hook 'comint-output-filter-functions 'comint-postoutput-scroll-to-bottom)
 
-(require 'xcscope)
-(setq cscope-do-not-update-database t)
+(if (eq system-type 'gnu-linux)(require 'xcscope))
+(if (eq system-type 'gnu-linux)(setq cscope-do-not-update-database t))
+
+;;auto highlight parenthess
+;;(require 'highlight-parentheses)
+(show-paren-mode 1)
