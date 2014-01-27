@@ -26,8 +26,8 @@
 ;;let cursor in the end.
 (remove-hook 'comint-output-filter-functions 'comint-postoutput-scroll-to-bottom)
 
-(require 'xcscope)
-(setq cscope-do-not-update-database t)
+;;(require 'xcscope)
+;;(setq cscope-do-not-update-database t)
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
