@@ -51,3 +51,6 @@
 ;;auto highlight parenthess
 ;;(require 'highlight-parentheses)
 (show-paren-mode 1)
+;;(c-set-offset 'substatement-open 0)
+;;(setq-default c-basic-offset 4)
+(setq c-default-style "linux")
