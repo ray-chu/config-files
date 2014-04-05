@@ -24,14 +24,19 @@ export NVIDIA_COMPUTE_SDK_LOCATION=$CUDA_INSTALL_PATH/NVIDIA_GPU_Computing_SDK/
 export NVIDIA_CUDA_SDK_LOCATION=$NVIDIA_COMPUTE_SDK_LOCATION/C
 export C_INCLUDE_PATH=/usr/include/openmpi-x86_64/
 export CUDAHOME=$CUDA_INSTALL_PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_INSTALL_PATH/lib64/:$CUDA_INSTALL_PATH/lib/:$NVIDIA_CUDA_SDK_LOCATION/lib:/usr/lib64
+export LD_LIBRARY_PATH=$CUDA_INSTALL_PATH/lib64/:$CUDA_INSTALL_PATH/lib/:$NVIDIA_CUDA_SDK_LOCATION/lib:/usr/lib64
 
 ################## Hadoop Environment Setup #################
 # Set Hadoop-related environment variables
-export HADOOP_HOME=/Download/hadoop
+export HADOOP_INSTALL=/Downloads/hadoop
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+export HADOOP_YARN_HOME=$HADOOP_INSTALL
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+
 
 # Set JAVA_HOME (we will also configure JAVA_HOME directly for Hadoop later on)
-export JAVA_HOME=/usr/lib/jvm
+export JAVA_HOME=/usr/lib/jvm/jdk
 
 # Some convenient aliases and functions for running Hadoop-related commands
 unalias hfs &> /dev/null
@@ -53,4 +58,4 @@ lzohead () {
 }
 
 # Add Hadoop bin/ directory to PATH
-export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_INSTALL/bin:$HADOOP_INSTALL/sbin
