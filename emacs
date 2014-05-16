@@ -64,7 +64,12 @@
   (global-set-key [mouse-5] '(lambda ()
                                (interactive)
                                (scroll-up 1))))
-
+;;xcscope setting
 (require 'xcscope)
 (cscope-setup)
 (define-key global-map [(meta s)] 'cscope-find-this-symbol)
+
+;;window move setting
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+(windmove-default-keybindings 'meta)
