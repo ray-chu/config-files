@@ -68,6 +68,7 @@
 (require 'xcscope)
 (cscope-setup)
 (define-key global-map [(meta s)] 'cscope-find-this-symbol)
+(define-key global-map [(meta u)] 'cscope-pop-mark)
 
 ;;window move setting
 (when (fboundp 'windmove-default-keybindings)
