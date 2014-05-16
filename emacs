@@ -67,3 +67,4 @@
 
 (require 'xcscope)
 (cscope-setup)
+(define-key global-map [(meta s)] 'cscope-find-this-symbol)

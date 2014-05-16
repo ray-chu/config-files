@@ -65,5 +65,5 @@
                                (interactive)
                                (scroll-up 1))))
 
-;;(require 'xcscope)
-;;(cscope-setup)
+(require 'xcscope)
+(cscope-setup)
