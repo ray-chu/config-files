@@ -74,3 +74,18 @@
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 (windmove-default-keybindings 'meta)
+
+;;open files with read-only mode
+;;(view-mode 1)
+
+;;ctags setup
+(eval-after-load 'etags
+  '(progn
+     (defun xz-etags-apropos-symbol ()
+       (interactive)
+       (setq tag-name (thing-at-point 'symbol))
+     ;;  (interactive (find-tag-interactive "Locate tag: "))
+       (tags-apropos (concat "\\_<" tag-name "\\_>")))))
+
+
+(define-key global-map [(meta l)] 'xz-etags-apropos-symbol)

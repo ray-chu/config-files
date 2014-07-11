@@ -18,13 +18,18 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 alias ls='ls --color=auto'
 
 export PATH=$PATH:/usr/libexec/nx/
-export CUDA_INSTALL_PATH=/usr/local/cuda
+export CUDA_INSTALL_PATH=/usr/local/cuda/
 export PATH=$PATH:$CUDA_INSTALL_PATH/bin/
+### this part for running on the IASTATE server ###
+HOSTNAME=`hostname|grep -E ‘linux|research’ 2>&1`
+if [-n "$HOSTNAME"];then
+    export PATH=$PATH:$HOME/gem5-gpu/cuda_components/bin/
+fi
 export NVIDIA_COMPUTE_SDK_LOCATION=$CUDA_INSTALL_PATH/NVIDIA_GPU_Computing_SDK/
 export NVIDIA_CUDA_SDK_LOCATION=$NVIDIA_COMPUTE_SDK_LOCATION/C
 export C_INCLUDE_PATH=/usr/include/openmpi-x86_64/
 export CUDAHOME=$CUDA_INSTALL_PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_INSTALL_PATH/lib64/:$CUDA_INSTALL_PATH/lib/:$NVIDIA_CUDA_SDK_LOCATION/lib:/usr/lib64
+export LD_LIBRARY_PATH=$CUDA_INSTALL_PATH/lib64/:$CUDA_INSTALL_PATH/lib/:$NVIDIA_CUDA_SDK_LOCATION/lib:/usr/lib64
 
 ################## Hadoop Environment Setup #################
 # Set Hadoop-related environment variables
@@ -59,3 +64,6 @@ lzohead () {
 
 # Add Hadoop bin/ directory to PATH
 export PATH=$PATH:$HADOOP_INSTALL/bin:$HADOOP_INSTALL/sbin
+
+# Add M5_PATH
+export M5_PATH=/Downloads/gem5-stable/x86_full_system_image/
