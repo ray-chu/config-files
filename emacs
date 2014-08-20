@@ -102,3 +102,6 @@
       (append '(("\\.ml[ily]?$" . tuareg-mode)
 		("\\.topml$" . tuareg-mode))
 	      auto-mode-alist))
+
+;;show column number
+(setq column-number-mode t)
