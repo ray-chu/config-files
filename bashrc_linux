@@ -67,3 +67,6 @@ export PATH=$PATH:$HADOOP_INSTALL/bin:$HADOOP_INSTALL/sbin
 
 # Add M5_PATH
 export M5_PATH=/Downloads/gem5-stable/x86_full_system_image/
+
+#import new version texlive
+export PATH=$PATH:/usr/local/texlive/2014/bin/x86_64-linux/

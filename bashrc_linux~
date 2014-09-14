@@ -21,8 +21,8 @@ export PATH=$PATH:/usr/libexec/nx/
 export CUDA_INSTALL_PATH=/usr/local/cuda/
 export PATH=$PATH:$CUDA_INSTALL_PATH/bin/
 ### this part for running on the IASTATE server ###
-HOSTNAME=`hostname|grep -E ‘linux|research’ 2>&1`
-if [-n "$HOSTNAME"];then
+HOSTNAME=`hostname|grep -E "linux|research"`      ### careful, execute command in `` strings must use "" quote ###
+if [ -n "$HOSTNAME" ]; then
     export PATH=$PATH:$HOME/gem5-gpu/cuda_components/bin/
 fi
 export NVIDIA_COMPUTE_SDK_LOCATION=$CUDA_INSTALL_PATH/NVIDIA_GPU_Computing_SDK/
