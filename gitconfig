@@ -5,3 +5,5 @@
 	email = zhuxian1987@gmail.com
 [http]
 	sslVerify = false
+[push]
+	default = simple
