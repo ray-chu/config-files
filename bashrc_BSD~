@@ -5,6 +5,7 @@
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias xterm='xterm -geometry 72x34+100+40 -fn *-fixed-*-*-*-20-*'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -17,3 +18,4 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad		#BSD uses LSCOLORS(mac is BSD)
 alias ls='ls -GFh'
+alias ll='ls -l'
