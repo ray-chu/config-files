@@ -5,6 +5,7 @@
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias python=/usr/local/bin/python2.7
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
