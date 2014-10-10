@@ -65,10 +65,18 @@
                                (interactive)
                                (scroll-up 1))))
 ;;xcscope setting
+(hs-minor-mode 1)
 (require 'xcscope)
 (cscope-setup)
-(define-key global-map [(meta s)] 'cscope-find-this-symbol)
-(define-key global-map [(meta p)] 'cscope-pop-mark)
+;; So meta-C is capitalize word, but meta-c occupied by cscope
+(define-prefix-command 'xcscope-map)
+(global-set-key [(meta c)] 'xcscope-map)
+(define-key xcscope-map (kbd "s") 'cscope-find-this-symbol)
+(define-key xcscope-map (kbd "p") 'cscope-pop-mark)
+(define-key xcscope-map (kbd "n") 'cscope-history-forward-file-current-result)
+(define-key xcscope-map (kbd "d") 'cscope-find-global-definition)
+(define-key xcscope-map (kbd "c") 'cscope-find-functions-calling-this-function)
+(define-key xcscope-map (kbd "h") 'hs-toggle-hiding)
 
 ;;window move setting
 (when (fboundp 'windmove-default-keybindings)
@@ -102,3 +110,6 @@
       (append '(("\\.ml[ily]?$" . tuareg-mode)
 		("\\.topml$" . tuareg-mode))
 	      auto-mode-alist))
+
+;;show column number
+(setq column-number-mode t)
