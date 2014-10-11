@@ -113,3 +113,15 @@
 
 ;;show column number
 (setq column-number-mode t)
+
+;;cedet settings
+;;cedet is big and slow. If unecessary, no need to use it. So I define a start function and unload function to control it
+(defun start-cedet ()
+  "start cedet IDE mode"
+  (interactive)
+  (load-file "~/emacs-package/cedet/cedet-1.1/common/cedet.el")
+  (semantic-load-enable-code-helpers))
+
+(define-prefix-command 'cedet-map)
+(global-set-key [(ctrl i)] 'cedet-map)
+(define-key cedet-map [(s)] 'start-cedet)
