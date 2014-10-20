@@ -122,6 +122,7 @@
   (load-file "~/emacs-package/cedet/cedet-1.1/common/cedet.el")
   (semantic-load-enable-code-helpers))
 
-(define-prefix-command 'cedet-map)
-(global-set-key [(ctrl i)] 'cedet-map)
-(define-key cedet-map [(s)] 'start-cedet)
+;; (define-key global-map [(ctrl i)]  nil)
+;; (define-prefix-command 'cedet-map)
+;; (global-set-key [(ctrl i)] 'cedet-map)
+;; (define-key cedet-map [(s)] 'start-cedet)
