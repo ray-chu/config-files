@@ -126,3 +126,7 @@
 ;; (define-prefix-command 'cedet-map)
 ;; (global-set-key [(ctrl i)] 'cedet-map)
 ;; (define-key cedet-map [(s)] 'start-cedet)
+
+;;allow no-window clip using system clip
+(require 'xclip)
+(xclip-mode 1)

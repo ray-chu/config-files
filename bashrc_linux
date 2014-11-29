@@ -31,7 +31,8 @@ export NVIDIA_COMPUTE_SDK_LOCATION=$CUDA_INSTALL_PATH/NVIDIA_GPU_Computing_SDK/
 export NVIDIA_CUDA_SDK_LOCATION=$NVIDIA_COMPUTE_SDK_LOCATION/C
 export C_INCLUDE_PATH=/usr/include/openmpi-x86_64/
 export CUDAHOME=$CUDA_INSTALL_PATH
-export LD_LIBRARY_PATH=$CUDA_INSTALL_PATH/lib64/:$CUDA_INSTALL_PATH/lib/:$NVIDIA_CUDA_SDK_LOCATION/lib:/usr/lib64
+# export LD_LIBRARY_PATH=$LD_LIBRARAYPATH:$CUDA_INSTALL_PATH/lib64/:$CUDA_INSTALL_PATH/lib/:$NVIDIA_CUDA_SDK_LOCATION/lib:/usr/lib64/:/usr/lib
+export LD_LIBRARY_PATH=$LD_LIBRARAYPATH:$NVIDIA_CUDA_SDK_LOCATION/lib:/usr/lib64/:/usr/lib
 
 ################## Hadoop Environment Setup #################
 # Set Hadoop-related environment variables
@@ -72,3 +73,17 @@ export M5_PATH=/Downloads/gem5-stable/x86_full_system_image/
 
 #import new version texlive
 export PATH=$PATH:/usr/local/texlive/2014/bin/x86_64-linux/
+
+# export LANG="zh_CN.UTF-8"
+# export LC_CTYPE="zh_CN.UTF-8"
+# export XIM=fcitx
+# export XIM_PROGRAM=fcitx
+# export GTK_IM_MODULE=xim
+# export XMODIFIERS=”@im=fcitx”
+ # export GTK_IM_MODULE=ibus
+ # export QT_IM_MODULE=ibus
+ # export CLUTTER_IM_MODULE=ibus
+# export GTK_IM_MODULE=xim 
+# export QT_IM_MODULE=xim 
+# export XMODIFIERS=@im=ibus
+# ibus-daemon -drx

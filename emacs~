@@ -122,6 +122,10 @@
   (load-file "~/emacs-package/cedet/cedet-1.1/common/cedet.el")
   (semantic-load-enable-code-helpers))
 
+;; (define-key global-map [(ctrl i)]  nil)
 ;; (define-prefix-command 'cedet-map)
 ;; (global-set-key [(ctrl i)] 'cedet-map)
 ;; (define-key cedet-map [(s)] 'start-cedet)
+
+;;allow no-window clip using system clip
+(xclip-mode 1)
