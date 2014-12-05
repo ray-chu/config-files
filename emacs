@@ -13,9 +13,10 @@
 (require 'tramp)
 (setq tramp-default-method "ssh")
 (setq inhibit-startup-message t)
+(setq gnu-linux "gnu/linux")
 ;;share the clipboard with system so that emacs can communicate with other applications
 (setq x-select-enable-clipboard t)
-(if (eq system-type 'gnu-linux)(setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
+(if (string-equal system-type gnu-linux)(setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
 ;;(if (eq system-type 'darwin))
 (global-linum-mode 1)
 ;;set up shell mode as bash
@@ -45,8 +46,8 @@
     (progn 
       (set-default-font "-adobe-courier-bold-o-normal--18-180-75-75-m-110-iso10646-1")))
 
-(if (eq system-type 'gnu-linux)(require 'xcscope))
-(if (eq system-type 'gnu-linux)(setq cscope-do-not-update-database t))
+(if (string-equal system-type gnu-linux)(require 'xcscope))
+(if (string-equal system-type gnu-linux)(setq cscope-do-not-update-database t))
 
 ;;auto highlight parenthess
 ;;(require 'highlight-parentheses)
@@ -76,9 +77,9 @@
                                (scroll-up 1))))
 ;;xcscope setting
 ;;(hs-minor-mode 1)
-(if (eq system-type 'gnu-linux)
+(if (string-equal system-type gnu-linux)
     (progn
-      ;;(require 'xcscope)
+      (require 'xcscope)
       (cscope-setup)
       (define-prefix-command 'xcscope-map)
       (global-set-key [(meta c)] 'xcscope-map)

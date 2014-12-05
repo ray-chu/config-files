@@ -13,6 +13,7 @@
 (require 'tramp)
 (setq tramp-default-method "ssh")
 (setq inhibit-startup-message t)
+(setq gnu-linux "gnu/linux")
 ;;share the clipboard with system so that emacs can communicate with other applications
 (setq x-select-enable-clipboard t)
 (if (eq system-type 'gnu-linux)(setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
@@ -57,16 +58,17 @@
 
 ;;Terminal mouse support
 (unless window-system
-  (defun toggle-xterm-mouse-mode()
-    "Toggle mouse usage in terminal. If enabled, mouse can not use host xterm copy function."
-    (interactive)
-    (if (null xterm-mouse-mode)
-	(setq xterm-mouse-mode 1)
-      (setq xterm-mouse-mode nil)
-	)
-    )
-  (global-set-key [(meta m)] 'toggle-xterm-mouse-mode)
-  ;;(xterm-mouse-mode 1)
+  ;; (defun toggle-xterm-mouse-mode()
+  ;;   "Toggle mouse usage in terminal. If enabled, mouse can not use host xterm copy function."
+  ;;   (interactive)
+  ;;   (if (null xterm-mouse-mode)
+  ;; 	(setq xterm-mouse-mode 1)
+  ;;     (setq xterm-mouse-mode nil)
+  ;; 	)
+  ;;   )
+  ;; (global-set-key [(meta m)] 'toggle-xterm-mouse-mode)
+  ;;When turned on, the normal xterm mouse functionality for such clicks is still available by holding down the SHIFT key while pressing the mouse button.
+  (xterm-mouse-mode 1)
   (global-set-key [mouse-4] '(lambda ()
                                (interactive)
                                (scroll-down 1)))
