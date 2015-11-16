@@ -1,5 +1,6 @@
 [core]
 	editor = emacs -nw
+	excludesfile = /home/xian/.gitignore_global
 [user]
 	name = Ray Chu
 	email = zhuxian1987@gmail.com
