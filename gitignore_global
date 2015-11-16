@@ -1,1 +1,2 @@
-.gitignore_global
+#ignore any emacs auto-backup files
+*~
