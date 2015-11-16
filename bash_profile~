@@ -1,5 +1,4 @@
-export PATH=/usr/local/git/bin:/Applications/Emacs.app/Contents/MacOS/$PATH
-alias Emacs=emacs
+export PATH=/usr/local/git/bin:$PATH
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
