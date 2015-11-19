@@ -46,6 +46,11 @@
     (progn 
       (set-default-font "-adobe-courier-bold-o-normal--18-180-75-75-m-110-iso10646-1")))
 
+;;set full screen for mac system
+(if (string= system-type "darwin")
+    (progn
+      (global-set-key (kbd "s-<escape>") 'toggle-frame-fullscreen)))
+
 (if (string-equal system-type gnu-linux)(require 'xcscope))
 (if (string-equal system-type gnu-linux)(setq cscope-do-not-update-database t))
 
@@ -77,7 +82,7 @@
                                (scroll-up 1))))
 ;;xcscope setting
 ;;(hs-minor-mode 1)
-(if (string-equal system-type gnu-linux)
+(if (or (string-equal system-type gnu-linux) (string= system-type "darwin"))
     (progn
       (require 'xcscope)
       (cscope-setup)
@@ -92,6 +97,8 @@
       )
   )
 
+;;force vertical positioning of pop-up windows(create a new windows at the right side of current window)
+(setq split-width-threshold 0)
 ;; So meta-C is capitalize word, but meta-c occupied by cscope
 
 
