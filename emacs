@@ -51,6 +51,18 @@
     (progn
       (global-set-key (kbd "s-<escape>") 'toggle-frame-fullscreen)))
 
+;;set full screen for x11 system
+(defun toggle-fullscreen ()
+   "Toggle full screen on X11"
+   (interactive)
+   (when (eq window-system 'x)
+     (set-frame-parameter
+      nil 'fullscreen
+      (when (not (frame-parameter nil 'fullscreen)) 'fullboth))))
+(if (eq window-system 'x)
+    (progn
+      (global-set-key [f10] 'toggle-fullscreen)))
+
 (if (string-equal system-type gnu-linux)(require 'xcscope))
 (if (string-equal system-type gnu-linux)(setq cscope-do-not-update-database t))
 
