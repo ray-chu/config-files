@@ -94,12 +94,13 @@
       (define-key xcscope-map (kbd "n") 'cscope-history-forward-file-current-result)
       (define-key xcscope-map (kbd "d") 'cscope-find-global-definition)
       (define-key xcscope-map (kbd "c") 'cscope-find-functions-calling-this-function)
-      (define-key xcscope-map (kbd "h") 'hs-toggle-hiding)      
+      (define-key xcscope-map (kbd "h") 'hs-toggle-hiding)
+      ;;force vertical positioning of pop-up windows(create a new windows at the right side of current window)
+      (setq split-width-threshold 120)
       )
   )
 
-;;force vertical positioning of pop-up windows(create a new windows at the right side of current window)
-(setq split-width-threshold 0)
+
 ;; So meta-C is capitalize word, but meta-c occupied by cscope
 
 
