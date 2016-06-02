@@ -45,7 +45,7 @@
 ;;set x-window font and size
 (if (string= window-system "x")
     (progn
-      (set-default-font "Noto Mono-16")))
+      (set-default-font "DejaVu Sans Mono-16")))
 
 ;;set darwin font and size
 (if (string= system-type "darwin") 
