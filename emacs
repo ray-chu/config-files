@@ -41,6 +41,12 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+
+;;set x-window font and size
+(if (string= window-system "x")
+    (progn
+      (set-default-font "Noto Mono-16")))
+
 ;;set darwin font and size
 (if (string= system-type "darwin") 
     (progn 
